@@ -15,7 +15,6 @@ const int motorB1 = 5;
 const int motorB2 = 4;
 const int motorBspeed = 3;
 
-//int vSpeed = 200;
 int num_direccion, num_rotacion;
 int pulso, cm;
 
@@ -39,9 +38,9 @@ void setup() {
 
   pinMode(BUZZER_PIN, OUTPUT);
   analogWrite(motorA1, 0);
-    analogWrite(motorA2, 0);
-    analogWrite(motorB1, 0);
-    analogWrite(motorB2, 0);
+  analogWrite(motorA2, 0);
+  analogWrite(motorB1, 0);
+  analogWrite(motorB2, 0);
 }
 
 void loop() {
@@ -67,9 +66,9 @@ void loop() {
   enfrente();
   delay(2000);
   String rnd = prob();
-  if(rnd == "mover colita"){
+  if (rnd == "mover colita") {
     mover();
-  }else{
+  } else {
     ladrar();
   }
   delay(1500);
@@ -83,12 +82,12 @@ void rotar() {
     derecha();
   }
 }
-void ladrar(){
+void ladrar() {
   // Generar un ladrido de perro
   tone(BUZZER_PIN, LADRIDO_PERROFREQ);
   delay(LADRIDO_PERRODURATION);
   noTone(BUZZER_PIN);
-  
+
   // Esperar un tiempo antes de generar otro ladrido
   delay(500);
 }
